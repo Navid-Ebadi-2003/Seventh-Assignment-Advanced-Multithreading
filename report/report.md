@@ -1,0 +1,84 @@
+# seventh assignment report
+
+## navid ebadi 401222093
+
+## introduction:
+- Practice to learn the multiThread
+
+## Design and Implementation:
+- piCalculate :
+    - class Task extends thread {
+        - operations {
+            - run()
+        - }
+    - }
+    - attributes {
+        - pi : BigDecimal
+        - n : BigDecimal
+        - s : BigDecimal
+        - L : Lock
+    - }
+    - operations {
+        - calculator()
+        - calculate(int) : str
+    - }
+- prioritySimulator :
+    - Massage [
+      - attributes {
+        - callerThreadColor : str
+        - message : str
+      - }
+      - operations {
+        - Message(str , str)
+        - getCallerThreadColor() : str
+        - getMessage() : str
+        - toString() : str
+      - }
+    - ]
+    - colorThread extend Thread [
+      - operations {
+        - printMassage(Message)
+      - }
+    - ]
+    - Black-Blue-white thread extends ColorThread [
+      - attributes {
+        - latch : CountDownLatch
+        - MESSAGE : str
+      - }
+      - operations {
+        - Black-Blue-white thread(CountDownLatch)
+        - printMessage().super()
+        - getMessage() : str
+        - run()
+      - }
+    - ]
+    - Runner [
+      - attributes {
+        - messages : List<.Message.>
+      - }
+      - operations {
+        - run(int , int , int )
+        - addToList(Message)
+        - getMessages() : List<.Message.>
+      - }
+    - ]
+- Semaphore :
+  - Resource [
+    - operations {
+      - accessResource(str)
+    - }
+  - ]
+  - Operator extends Thread [
+    - attributes {
+      - sem : Semaphore
+      - name : str
+    - }
+    - operations {
+      - Operator(Semaphore , str)
+      - get_name() : str
+      - run()
+    - }
+  - ]
+  - Controller [
+    - main()
+  - ]
